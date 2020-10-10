@@ -1,0 +1,15 @@
+{
+  "name": "patients",
+  "description": "Web app that manages patient information.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "main": "server.js",
+  "dependencies": {
+    "express": "~4.16",
+    "mongoose": "~5.3",
+    "body-parser": "~1.18"
+  }
+}

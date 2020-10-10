@@ -1,0 +1,92 @@
+<!doctype html>
+<html ng-app="patientApp" ng-controller="patientCtrl">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+
+        <form name="addPatientForm">
+            <table class="a">
+                <tr>
+                    <td>First Name:</td>
+                    <td><input type="text" name="firstName" ng-model="FirstName" required></td>
+                    <td>
+                        <span class="error" ng-show="addPatientForm.firstName.$dirty && addPatientForm.firstName.$error.required"> *Required</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Last Name:</td>
+                    <td><input type="text" name="lastName" ng-model="LastName" required></td>
+                    <td>
+                        <span class="error" ng-show="addPatientForm.lastName.$dirty && addPatientForm.lastName.$error.required"> *Required</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Phone Number:</td>
+                    <td><input type="number" name="phoneNumber" ng-model="PhoneNumber" required></td>
+                    <td>
+                        <span class="error" ng-show="addPatientForm.phoneNumber.$dirty && addPatientForm.phoneNumber.$error.required"> *Required</span>
+                        <span class="error" ng-show="!addPatientForm.phoneNumber.$error.required && addPatientForm.phoneNumber.$invalid"> *Please input a valid number.</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email Address:</td>
+                    <td><input type="email" name="emailAddress" ng-model="EmailAddress" required></td>
+                    <td>
+                        <span class="error" ng-show="addPatientForm.emailAddress.$dirty && addPatientForm.emailAddress.$error.required"> *Required</span>
+                        <span class="error" ng-show="!addPatientForm.emailAddress.$error.required && addPatientForm.emailAddress.$invalid"> *Please input a valid email address.</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Date of Birth:</td>
+                    <td><input type="date" name="dateOfBirth" ng-model="DateOfBirth" required></td>
+                    <td>
+                        <span class="error" ng-show="addPatientForm.dateOfBirth.$dirty && addPatientForm.dateOfBirth.$error.required"> *Required</span>
+                        <span class="error" ng-show="!addPatientForm.dateOfBirth.$error.required && addPatientForm.dateOfBirth.$invalid"> *Please input a valid date.</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Address:</td>
+                    <td><input type="text" name="address" ng-model="Address" required></td>
+                    <td>
+                        <span class="error" ng-show="addPatientForm.address.$dirty && addPatientForm.address.$error.required"> *Required</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="submit" ng-click="add_patient()" ng-disabled="addPatientForm.$invalid">Add</button>
+                    </td>
+                </tr>
+
+            </table>
+        </form>
+    </div>
+    <hr>
+    <div>
+    <table class="b">
+        <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Phone Number</th>
+        <th>Email Address</th>
+        <th>Date Of Birth</th>
+        <th>Address</th>
+        <th></th>
+        </tr>
+        <tr ng-repeat="patient in patients">
+        <td>{{patient.firstName}}</td>
+        <td>{{patient.lastName}}</td>
+        <td>{{patient.phoneNumber}}</td>
+        <td>{{patient.emailAddress}}</td>
+        <td>{{patient.dateOfBirth | date:'MMMM dd, yyyy'}}</td>
+        <td>{{patient.address}}</td>
+        <!-- <td><input type="button" value="Delete" data-ng-click="del_patient(patient)"></td> -->
+        <td><button data-ng-click="del_patient(patient)">Delete</button></td>
+        </tr>
+    </table>
+    </div>
+</body>
+</html>

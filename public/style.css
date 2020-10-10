@@ -1,0 +1,48 @@
+
+        table.a {
+          font-family: arial, sans-serif;
+          table-layout: auto;
+        }
+
+        .a td, .a th{
+            text-align: left;
+            padding: 8px;
+        }
+          
+        table.b {
+          font-family: arial, sans-serif;
+          table-layout: auto;
+          border-collapse: collapse;
+          border: 1px solid#dddddd;;
+          width: 100%;  
+        }
+
+        .b td, .b th{
+            border: 1px solid#dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        .b tr:nth-child(even){
+            background-color:#dddddd;
+        }
+
+        .b th{
+            height: 50px
+        }
+
+        .button {
+            padding: 8px;
+            margin: 5px 8px;
+        }
+
+        .error{
+            font-family: arial, sans-serif; 
+            color:Red;
+            margin-bottom: 10px;
+        }
+
+        input
+        {
+            width: 250px;
+        }

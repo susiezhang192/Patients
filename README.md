@@ -40,6 +40,7 @@
 (1) First, we'll make sure all current packages are up to date
 	 sudo apt update && sudo apt upgrade -y
 	
+<<<<<<< HEAD
 (2) Install the MongoDB package
     a. sudo apt-get install -y mongodb
 
@@ -92,6 +93,3 @@
 (9) From a separate browser tab, navigate to your VM's public IP address.
     You should see the forms for add new patients, as in the attached screenshot.
 
-	
-
-   
